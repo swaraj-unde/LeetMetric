@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LeetMetric</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
+      <h1 id="heading">LeetMetric</h1>
 
-        <h1 id="heading">LeetMetric</h1>
+      <div class="usercont">
+        <p id="asking">Enter Your LeetCode Username :</p>
+        <input type="text" placeholder="Username" id="userinput" />
+        <button id="button">Search</button>
+      </div>
 
-        <div class="usercont">
-            <p id="asking">Enter Your LeetCode Username :</p>
-            <input type="text" placeholder="Username" id="userinput">
-            <button id="button">Search</button>
-        </div>
-
-        <div class="stats">
-
-            <div class="progress">
-
-
-                <div class="prog_item">
-                    <div class="easy_prog circle">
-                        Easy
-                        <span id="easy-label"></span>
-                    </div>
-                </div>
-                <div class="prog_item">
-                    <div class="mid_prog circle">
-                        Medium
-                        <span id="mid-label"></span>
-                    </div>
-                </div>
-                <div class="prog_item">
-                    <div class="hard_prog circle">
-                        Hard
-                        <span id="hard-label"></span>
-                    </div>
-                </div>
+      <div class="stats">
+        <div class="progress">
+          <div class="prog_item">
+            <div class="easy_prog circle">
+              Easy
+              <span id="easy-label"></span>
             </div>
-            <div class="status_cards">
-
+          </div>
+          <div class="prog_item">
+            <div class="mid_prog circle">
+              Medium
+              <span id="mid-label"></span>
             </div>
-
-
+          </div>
+          <div class="prog_item">
+            <div class="hard_prog circle">
+              Hard
+              <span id="hard-label"></span>
+            </div>
+          </div>
         </div>
-
-
-
+        <div class="status_cards"></div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
