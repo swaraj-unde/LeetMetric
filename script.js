@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const hardlab = document.getElementById("hard-label");
   const stat = document.querySelector(".status_cards");
   const stats = document.querySelector(".stats");
+  const circle = document.querySelector(".progress");
 
   function validateuser(username) {
     if (username.trim() === "") {
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function putdata(user) {
     stats.style.display = `flex`;
+    circle.style.display = `flex`;
 
     const etot = user.totalEasy;
     const esol = user.easySolved;
@@ -46,6 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
     easylab.textContent = `${esol} / ${etot}`;
     midlab.textContent = `${msol} / ${mtot}`;
     hardlab.textContent = `${hsol} / ${htot}`;
+
+
+    const tot = document.getElementById("total");
+    const coin = document.getElementById("coins");
+    const rank = document.getElementById("ranking");
+
+    tot.textContent = `Total Solved : ${esol+msol+hsol}`;
+    coin.textContent = `LeetCode Coins : ${user.contributionPoint}`;
+    rank.textContent = `Ranking : ${user.ranking}`;
+
+
+
+
   }
 
   async function fetchuser(username) {
@@ -77,7 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function clearstats() {
-    stat.innerHTML = ``;
+    stat.innerHTML = `<div class="card" id="total">
+            Total Solved : 00
+          </div>
+          <div class="card" id="coins">
+            LeetCode Coins : 00
+          </div>
+          <div class="card" id="ranking">
+            Ranking : 00
+          </div>`;
     easy.style.setProperty("--prog", `0%`);
     medium.style.setProperty("--prog", `0%`);
     hard.style.setProperty("--prog", `0%`);
@@ -87,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hardlab.textContent = ``;
 
     stats.style.display = `none`;
+    circle.style.display = `none`;
   }
 
   button.addEventListener("click", function () {
